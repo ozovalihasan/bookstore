@@ -9,7 +9,7 @@ const initialState = [
   {
     id: 2,
     title: 'Rome and Juliet',
-    category: 'Romantic',
+    category: 'Biography',
   },
 ];
 
