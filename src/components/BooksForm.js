@@ -24,7 +24,7 @@ function BooksForm() {
           if (title && category) {
             dispatch(addBook(title, category));
             setTitle('');
-            setCategory('');
+            setCategory('Action');
             e.target.reset();
           }
         }}
