@@ -7,6 +7,7 @@ function Book({ id, title, category }) {
       <td>{id}</td>
       <td>{title}</td>
       <td>{category}</td>
+      <td><button type="button">Remove Book</button></td>
     </tr>
   );
 }
