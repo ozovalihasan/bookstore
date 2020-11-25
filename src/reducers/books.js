@@ -6,6 +6,11 @@ const initialState = [
     title: 'MacBeth',
     category: 'History',
   },
+  {
+    id: 2,
+    title: 'Rome and Juliet',
+    category: 'Romantic',
+  },
 ];
 
 const bookReducer = (state = initialState, action) => {
