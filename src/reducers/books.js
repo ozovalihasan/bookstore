@@ -15,7 +15,7 @@ const initialState = [
 
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_BOOK:
+    case CREATE_BOOK:
       return [
         ...state,
         {
