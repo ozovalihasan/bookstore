@@ -1,4 +1,3 @@
-/* import/prefer-default-export */
 import { CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER } from './actionTypes';
 
 export const addBook = (title, category) => ({
