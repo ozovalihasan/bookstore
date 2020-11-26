@@ -6,6 +6,7 @@ function App() {
   return (
     <div>
       <BooksList />
+      <div className="app line"></div>
       <BooksForm />
     </div>
   );
