@@ -1,6 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { changeFilter } from '../actions/index';
+import PropTypes from 'prop-types';
 
 const CATEGORIES = [
   'All',
@@ -13,13 +12,9 @@ const CATEGORIES = [
   'Sci-Fi',
 ];
 
-function CategoryFilter() {
-  const dispatch = useDispatch();
-  const handleChange = e => {
-    dispatch(changeFilter(e.target.value));
-  };
+function CategoryFilter({ handleFilterChange }) {
   return (
-    <select onChange={handleChange} name="filter">
+    <select onChange={handleFilterChange} name="filter">
       {CATEGORIES.map(category => (
         <option key={category} value={category}>
           {category}
@@ -28,5 +23,9 @@ function CategoryFilter() {
     </select>
   );
 }
+
+CategoryFilter.propTypes = {
+  handleFilterChange: PropTypes.func.isRequired,
+};
 
 export default CategoryFilter;
