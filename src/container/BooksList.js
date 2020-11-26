@@ -12,6 +12,12 @@ function BooksList() {
   const handleFilterChange = e => {
     dispatch(changeFilter(e.target.value));
   };
+
+  const filterBooks = allBooks => (
+    filter === 'All' ? allBooks
+      : allBooks.filter(book => book.category === filter)
+  );
+
   return (
     <div>
       <h2>Books List</h2>
@@ -25,16 +31,7 @@ function BooksList() {
           </tr>
         </thead>
         <tbody>
-          {allBooks
-            .filter(book => {
-              if (filter !== 'All') {
-                if (book.category === filter) {
-                  return true;
-                }
-                return false;
-              }
-              return true;
-            })
+          { filterBooks(allBooks)
             .map(book => (
               <Book
                 key={book.id}
