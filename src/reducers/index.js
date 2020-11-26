@@ -1,10 +1,22 @@
-import { combineReducers } from 'redux';
-import bookReducer from './books';
-import filterReducer from './filter';
+import { createStore } from 'redux';
+import rootReducer from './rootReducer';
 
-const rootReducer = combineReducers({
-  book: bookReducer,
-  filter: filterReducer,
-});
+export const initialState = {
+  book: [
+    {
+      id: 1,
+      title: 'MacBeth',
+      category: 'History',
+    },
+    {
+      id: 2,
+      title: 'Rome and Juliet',
+      category: 'History',
+    },
+  ],
+  filter: 'All',
+};
 
-export default rootReducer;
+const store = createStore(rootReducer, initialState);
+
+export default store;
