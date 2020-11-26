@@ -1,30 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { removeBook } from '../actions/index';
 
-function Book({ id, title, category }) {
-  const dispatch = useDispatch();
-  const handleRemoveBook = () => dispatch(removeBook(id));
+function Book({ book, handleRemoveBook }) {
   return (
-    <tr key={id}>
-      <td>{id}</td>
-      <td>{title}</td>
-      <td>{category}</td>
-      <td><button type="button" onClick={handleRemoveBook}>Remove Book</button></td>
+    <tr>
+      <td>{book.id}</td>
+      <td>{book.title}</td>
+      <td>{book.category}</td>
+      <td>
+        <button type="button" onClick={handleRemoveBook}>
+          Remove Book
+        </button>
+      </td>
     </tr>
   );
 }
 
 Book.propTypes = {
-  id: PropTypes.number,
-  title: PropTypes.string,
-  category: PropTypes.string,
+  book: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }),
+  handleRemoveBook: PropTypes.func.isRequired,
 };
 
 Book.defaultProps = {
-  id: 1,
-  title: '',
-  category: '',
+  book: { id: 1, title: '', category: '' },
 };
 export default Book;
