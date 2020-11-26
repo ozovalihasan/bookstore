@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { removeBook } from '../actions/index';
 
-function Book({ book }) {
-  const dispatch = useDispatch();
-  const handleRemoveBook = () => dispatch(removeBook(book.id));
+function Book({ book, handleRemoveBook }) {
   return (
     <tr>
       <td>{book.id}</td>
@@ -26,6 +22,7 @@ Book.propTypes = {
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
   }),
+  handleRemoveBook: PropTypes.func.isRequired,
 };
 
 Book.defaultProps = {
