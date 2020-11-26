@@ -1,19 +1,6 @@
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/actionTypes';
 
-const initialState = [
-  {
-    id: 1,
-    title: 'MacBeth',
-    category: 'History',
-  },
-  {
-    id: 2,
-    title: 'Rome and Juliet',
-    category: 'Romantic',
-  },
-];
-
-const bookReducer = (state = initialState, action) => {
+const bookReducer = (state = [], action) => {
   switch (action.type) {
     case CREATE_BOOK:
       return [
