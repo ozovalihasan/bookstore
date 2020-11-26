@@ -1,25 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Book({ id, title, category }) {
+function Book({ book }) {
   return (
-    <tr key={id}>
-      <td>{id}</td>
-      <td>{title}</td>
-      <td>{category}</td>
+    <tr>
+      <td>{book.id}</td>
+      <td>{book.title}</td>
+      <td>{book.category}</td>
     </tr>
   );
 }
 
 Book.propTypes = {
-  id: PropTypes.number,
-  title: PropTypes.string,
-  category: PropTypes.string,
+  book: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }),
 };
 
 Book.defaultProps = {
-  id: 1,
-  title: '',
-  category: '',
+  book: { id: 1, title: '', category: '' },
 };
 export default Book;
