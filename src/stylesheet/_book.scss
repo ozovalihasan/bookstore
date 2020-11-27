@@ -26,8 +26,6 @@
   }
 
   &.category {
-    width: 49px;
-    height: 18px;
     margin: 0 39px 0 0;
     opacity: 0.5;
     font-size: 14px;
@@ -39,10 +37,25 @@
     color: $black-three;
   }
 
+  &.writer {
+    width: 107px;
+  height: 19px;
+  margin: 4px 0 0;
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  }
+
   &.action-buttons {
     width: 73px;
     height: 19px;
     margin: 3px 15px 2px 0;
+    font-family: 'Roboto Slab', serif;
     font-size: 14px;
     font-weight: 300;
     font-stretch: normal;
@@ -50,25 +63,34 @@
     line-height: normal;
     letter-spacing: normal;
     color: #4386bf;
+    background: none;
   }
 
   &.percentage-container {
     display: flex;
   }
 
+
+
   &.percentage {
-    width: 68px;
-    height: 68px;
-    border-style: solid;
-    border-width: 5px;
-    border-image-source:
-      linear-gradient(
-        to bottom,
-        var(--medium-blue),
-        var(--dodger-blue)
-      );
-    border-image-slice: 1;
+    border-radius: 50%;
+    width: 90px;
+    height: 89.9px;
+    padding: 9.9px 10px 12px 12px; 
+    border-image-source: linear-gradient(to bottom, $medium-blue, $dodger-blue);
   }
+
+&.oval{
+  width: 68px;
+  height: 68px;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 50%;
+  
+  border-image-slice: 1;
+}
+
+
 
   &.percentage-text {
     width: 68px;

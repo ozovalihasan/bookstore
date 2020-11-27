@@ -28,7 +28,9 @@ function Book({ book, handleRemoveBook }) {
         </div>
       </div>
       <div className="book percentage-container">
-        <div className="book percentage"> </div>
+        <div className="book percentage">
+          <div className="book oval"> </div>
+        </div>
         <div>
           <div className="book percentage-text"> 64% </div>
           <div className="book percentage-status">Completed</div>
