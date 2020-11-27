@@ -19,7 +19,6 @@ function BooksList() {
 
   return (
     <div>
-      <h2>Books List</h2>
       <div>
         {filterBooks(allBooks).map(book => (
           <Book

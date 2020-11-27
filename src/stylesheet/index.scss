@@ -1,5 +1,17 @@
 @import './reset.css';
+@import './variable';
 
+html,
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: $pale-gray;
+}
+
+@import './book-header';
 @import './app';
 @import './book';
 @import './books-form';

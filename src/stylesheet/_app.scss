@@ -1,11 +1,13 @@
 .app {
   &.line {
     width: 1200px;
-
     height: 2px;
-
     margin: 40px 1px 29px 0;
-
     border: solid 1px #e8e8e8;
+  }
+
+  &.main {
+    width: 100%;
+    margin: 0 auto;
   }
 }
