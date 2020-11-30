@@ -32,7 +32,7 @@ function BooksForm() {
   };
 
   return (
-    <div>
+    <div className="books-form main">
       <div className="books-form add-text ">ADD NEW BOOK</div>
       <form onSubmit={handleSubmit} className="books-form form-main ">
         <input
@@ -60,7 +60,7 @@ function BooksForm() {
           ))}
         </select>
         <button type="submit" className="books-form add-book ">
-          Add book
+          ADD BOOK
         </button>
       </form>
     </div>

@@ -13,6 +13,11 @@ export const initialState = {
       title: 'Rome and Juliet',
       category: 'History',
     },
+    {
+      id: 3,
+      title: 'Introduction to React',
+      category: 'Learning',
+    },
   ],
   filter: 'All',
 };

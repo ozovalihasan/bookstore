@@ -1,9 +1,13 @@
 .book {
+  &.main-container {
+    width: 50%;
+  }
+
   &.main {
     width: 1100px;
     display: flex;
     align-items: center;
-    padding: 32px 27px;
+    padding: 0 27px;
     height: 170px;
     margin: 37px 100px 0;
     border-radius: 4px;
@@ -12,7 +16,6 @@
   }
 
   &.title {
-    width: 197px;
     height: 29px;
     margin: 3px 323px 0 0;
     font-size: 22px;
@@ -66,6 +69,11 @@
     background: none;
   }
 
+  &.button-remove,
+  &.button-edit {
+    border-left: 2px solid $pale-gray;
+  }
+
   &.percentage-container {
     display: flex;
   }
@@ -75,7 +83,6 @@
     width: 90px;
     height: 89.9px;
     padding: 9.9px 10px 12px 12px;
-    // border-image-source: linear-gradient(to bottom, $medium-blue, $dodger-blue);
   }
 
   &.oval {
@@ -86,8 +93,13 @@
     border-width: 5px;
     border-radius: 50%;
     border-image-slice: 1;
-    background: radial-gradient(white 29px, transparent 29px),
+    background:
+      radial-gradient(white 29px, transparent 29px),
       conic-gradient($medium-blue 0%, $dodger-blue 70%, $pale-gray 70%);
+  }
+
+  &.percentage-subcontainer {
+    border-right: 2px solid $pale-gray;
   }
 
   &.percentage-text {
@@ -122,6 +134,7 @@
     width: 75px;
     height: 21px;
     margin: 7px 109px 4px 59px;
+    font-family: 'Roboto Slab', serif;
     font-size: 16px;
     font-weight: 300;
     font-stretch: normal;
@@ -133,15 +146,13 @@
 
   &.update-progress {
     width: 184px;
-
     height: 33px;
-
     margin: 12px 0 9px 59px;
-
     padding: 7px 19px 8px 22px;
-
+    font-size: 13px;
     border-radius: 3px;
     background-color: $color-blue;
+    color: #fff;
     font-family: 'Roboto Slab', serif;
   }
 }

@@ -1,4 +1,8 @@
 .books-form {
+  &.main {
+    margin: 0 100px 50px 100px;
+  }
+
   &.add-text {
     width: 174px;
     height: 24px;
@@ -18,30 +22,43 @@
 
   &.input {
     width: 664px;
-    height: 45px;
-    margin: 19px 34px 0 0;
-    padding: 13px 571px 13px 17px;
+    padding-left: 20px;
     border-radius: 4px;
     border: solid 1px #e8e8e8;
     background-color: #fff;
+    color: $pinkish-gray;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
   }
 
   &.select-category {
     width: 285px;
-    height: 45px;
-    margin: 19px 34px 0;
-    padding: 6px 15px 9px 16px;
+    margin: 0 0 0 20px;
+    padding-left: 15px;
     border-radius: 4px;
     border: solid 1px #e8e8e8;
     background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.15px;
+    color: $pinkish-gray;
   }
 
   &.add-book {
     width: 184px;
-    height: 45px;
-    margin: 19px 0 0 34px;
+    height: 100%;
+    margin: 0 0 0 34px;
     padding: 12.8px 19px 14.2px 22px;
     border-radius: 3px;
-    background-color: var(--azure);
+    background-color: $color-blue;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    font-family: 'Roboto Slab', serif;
   }
 }
