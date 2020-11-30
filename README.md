@@ -1,8 +1,12 @@
 # Book Store CMS App 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+We developed a bookstore application for a fictional company using Redux and React where users can track their reading progress from the bookstore. The project includes the basic features of
+- Rendering the current books available in the bookstore
+- Updating the bookstore with recent books usign the Add book button
+- Removing books from the bookstore
 
-![screenshot](./calculator.png)
+![screenshot](./bookstore.gif)
 
 ## Live Demo
 [Live Demo](https://bookstore-cms-ozan.herokuapp.com/)

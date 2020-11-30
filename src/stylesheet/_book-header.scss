@@ -1,0 +1,38 @@
+.bookHeader {
+  width: 100%;
+  height: 95px;
+  background-color: #fff;
+  margin: 0 auto;
+
+  &.content {
+    max-width: 1200px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 0 100px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    padding-right: 15px;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: $color-blue;
+  }
+
+  h3 {
+    font-size: 13px;
+    font-stretch: normal;
+    letter-spacing: 1.9px;
+    color: $black-three;
+  }
+}
