@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import rootReducer from './rootReducer';
 
-const initialState = {
+export const initialState = {
   book: [
     {
       id: 1,
@@ -11,9 +11,10 @@ const initialState = {
     {
       id: 2,
       title: 'Rome and Juliet',
-      category: 'Romantic',
+      category: 'History',
     },
   ],
+  filter: 'All',
 };
 
 const store = createStore(rootReducer, initialState);
