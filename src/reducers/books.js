@@ -6,7 +6,7 @@ const bookReducer = (state = [], action) => {
       return [
         ...state,
         {
-          id: state[state.length - 1].id + 1,
+          id: state.length > 0 ? state[state.length - 1].id + 1 : 1,
           title: action.payload.title,
           category: action.payload.category,
         },
