@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Book Store CMS App 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+We developed a bookstore application for a fictional company using Redux and React where users can track their reading progress from the bookstore. The project includes the basic features of
+- Rendering the current books available in the bookstore
+- Updating the bookstore with recent books usign the Add book button
+- Removing books from the bookstore
 
-## Available Scripts
+![screenshot](./bookstore.gif)
 
-In the project directory, you can run:
+## Live Demo
+[Live Demo](https://bookstore-cms-ozan.herokuapp.com/)
 
-### `yarn start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To get a local copy up and running follow these simple example steps.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Prerequisites
 
-### `yarn test`
+Make sure Node.js is running on your local machine
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Setup
 
-### `yarn build`
+~~~bash
+$ git clone https://github.com/ozovalihasan/bookstore.git
+$ cd bookstore
+~~~
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install modules:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Usage
 
-### `yarn eject`
+Start server with:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+    npm start or npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Deployment instructions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+    git add .
+    git commit -m "ready for first push to heroku"  
+    heroku create $APP-NAME --buildpack mars/create-react-app
+    git push heroku $BRANCH_NAME:master
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Fire up your app by running `heroku open` Yay!!! your app has been deployed successfully.
 
-## Learn More
+# Authors
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 **Uduak Essien**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Github: [@acushlakoncept](https://github.com/acushlakoncept/)
+- Twitter: [@acushlakoncept](https://twitter.com/acushlakoncept)
+- Linkedin: [acushlakoncept](https://www.linkedin.com/in/acushlakoncept/)
 
-### Code Splitting
+👤 **Hasan Özovalı**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- LinkedIn: [Hasan Ozovali](https://www.linkedin.com/in/hasan-ozovali/)
+- Github: [@ozovalihasan](https://github.com/ozovalihasan)
+- Twitter: [@ozovalihasan](https://twitter.com/ozovalihasan)
+- Mail: [ozovalihasan@gmail.com](ozovalihasan@gmail.com)
 
-### Analyzing the Bundle Size
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions, issues and feature requests are welcome!
 
-### Making a Progressive Web App
+Feel free to check the [issues page](issues/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Show your support
 
-### Advanced Configuration
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgments
+- [Microverse Inc](https://www.microverse.org/)
