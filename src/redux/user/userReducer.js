@@ -15,7 +15,7 @@ const reducer = (state = {}, action) => {
     case FETCH_USER_SUCCESS:
       return {
         loading: false,
-        user: action.payload,
+        user: action.payload.username,
         error: '',
       };
 

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import Loading from './Loading';
 
-const UserForm = ({ fetchUser }) => {
+const UserForm = ({ fetchUser, loading }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,6 +23,7 @@ const UserForm = ({ fetchUser }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      {loading && <Loading /> }
       <input
         onChange={handleChange}
         type="text"
@@ -41,10 +43,12 @@ const UserForm = ({ fetchUser }) => {
 
 UserForm.propTypes = {
   fetchUser: PropTypes.func,
+  loading: PropTypes.bool,
 };
 
 UserForm.defaultProps = {
   fetchUser: () => '',
+  loading: false,
 };
 
 export default UserForm;

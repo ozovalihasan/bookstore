@@ -31,8 +31,12 @@ export const fetchUserLogin = (username, password) => dispatch => {
   };
   axios(config)
     .then(response => {
-      const user = response.data;
-      dispatch(fetchUserSuccess(user));
+      if (response.data.token) {
+        localStorage.token = response.data.token;
+        dispatch(fetchUserSuccess(response.data.user));
+      } else {
+        dispatch(fetchUserFailure(response.data.message));
+      }
     })
     .catch(error => {
       const errorMsg = error.message;
