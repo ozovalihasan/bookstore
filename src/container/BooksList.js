@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from '../components/Book';
-import { removeBook } from '../actions/index';
+import { removeBook } from '../redux/index';
 
 function BooksList() {
   const allBooks = useSelector(state => state.book);

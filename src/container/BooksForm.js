@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../actions/index';
+import { addBook } from '../redux/index';
 
 const CATEGORIES = [
   'Action',

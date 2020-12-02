@@ -92,8 +92,7 @@
     border-width: 5px;
     border-radius: 50%;
     border-image-slice: 1;
-    background:
-      radial-gradient(white 29px, transparent 29px),
+    background: radial-gradient(white 29px, transparent 29px),
       conic-gradient($medium-blue 0%, $dodger-blue 70%, $pale-gray 70%);
   }
 
