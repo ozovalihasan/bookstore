@@ -1,9 +1,13 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
+// import React from 'react';
+// import { Redirect } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { userSignOut } from '../redux';
 
 const SignOut = () => {
-  localStorage.clear();
-  return <Redirect to={{ pathname: '/login' }} />;
+  const dispatch = useDispatch();
+  dispatch(userSignOut());
+  // return <Redirect to={{ pathname: '/login' }} />;
+  return null;
 };
 
 export default SignOut;

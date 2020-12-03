@@ -3,6 +3,7 @@ import {
   FETCH_USER_REQUEST,
   FETCH_USER_SUCCESS,
   FETCH_USER_FAILURE,
+  USER_SIGN_OUT,
 } from './userTypes';
 
 export const fetchUserRequest = () => ({
@@ -19,6 +20,10 @@ export const fetchUserFailure = error => ({
   payload: error,
 });
 
+export const userSignOut = () => ({
+  type: USER_SIGN_OUT,
+});
+
 export const fetchUserLogin = (username, password) => dispatch => {
   dispatch(fetchUserRequest());
   const config = {
@@ -32,9 +37,8 @@ export const fetchUserLogin = (username, password) => dispatch => {
   axios(config)
     .then(response => {
       if (response.data.token) {
-        const user = response.data;
-        localStorage.token = user.token;
-        dispatch(fetchUserSuccess(user));
+        localStorage.token = response.data.token;
+        dispatch(fetchUserSuccess(response.data.user));
       } else {
         dispatch(fetchUserFailure(response.data.message));
       }
@@ -57,9 +61,8 @@ export const fetchUserSignUp = (username, password) => dispatch => {
   };
   axios(config)
     .then(response => {
-      const user = response.data;
-      localStorage.token = user.token;
-      dispatch(fetchUserSuccess(user));
+      localStorage.token = response.data.token;
+      dispatch(fetchUserSuccess(response.data.user));
     })
     .catch(error => {
       const errorMsg = error.message;

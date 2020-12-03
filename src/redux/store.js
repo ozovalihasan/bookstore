@@ -12,23 +12,6 @@ export const initialState = {
     initialized: false,
     error: '',
   },
-  // [
-  // {
-  //   id: 1,
-  //   title: 'MacBeth',
-  //   category: 'History',
-  // },
-  // {
-  //   id: 2,
-  //   title: 'Rome and Juliet',
-  //   category: 'History',
-  // },
-  // {
-  //   id: 3,
-  //   title: 'Introduction to React',
-  //   category: 'Learning',
-  // },
-  // ],
 
   filter: 'All',
 
