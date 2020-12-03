@@ -3,6 +3,7 @@ import {
   BOOK_CREATE,
   BOOKS_FAILURE,
   BOOKS_LIST,
+  BOOK_DELETE,
 } from './booksTypes';
 
 const reducer = (state = {}, action) => {
@@ -32,8 +33,18 @@ const reducer = (state = {}, action) => {
 
     case BOOKS_LIST:
       return {
+        loading: false,
         ...state,
         books: action.payload,
+        error: '',
+      };
+
+    case BOOK_DELETE:
+      console.log(action.payload);
+      return {
+        loading: false,
+        ...state,
+        books: state.books.filter(book => book.id !== action.payload.id),
         error: '',
       };
 

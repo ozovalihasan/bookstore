@@ -32,8 +32,9 @@ export const fetchUserLogin = (username, password) => dispatch => {
   axios(config)
     .then(response => {
       if (response.data.token) {
-        localStorage.token = response.data.token;
-        dispatch(fetchUserSuccess(response.data.user));
+        const user = response.data;
+        localStorage.token = user.token;
+        dispatch(fetchUserSuccess(user));
       } else {
         dispatch(fetchUserFailure(response.data.message));
       }
@@ -57,6 +58,7 @@ export const fetchUserSignUp = (username, password) => dispatch => {
   axios(config)
     .then(response => {
       const user = response.data;
+      localStorage.token = user.token;
       dispatch(fetchUserSuccess(user));
     })
     .catch(error => {

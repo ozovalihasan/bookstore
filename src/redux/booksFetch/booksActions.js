@@ -4,6 +4,7 @@ import {
   BOOKS_FAILURE,
   BOOK_CREATE,
   BOOKS_LIST,
+  BOOK_DELETE,
 } from './booksTypes';
 
 export const booksRequest = () => ({
@@ -18,6 +19,11 @@ export const bookCreate = book => ({
 export const booksList = books => ({
   type: BOOKS_LIST,
   payload: books,
+});
+
+export const bookDelete = id => ({
+  type: BOOK_DELETE,
+  payload: { id },
 });
 
 export const booksFailure = error => ({
@@ -71,13 +77,24 @@ export const fetchAllBooks = () => dispatch => {
     });
 };
 
-// const getBooks = fetch('http://127.0.0.1:4000/books', {
-//   method: 'get',
-//   headers: {
-//     'Content-Type': 'application/json',
-//     Authorization: `bearer ${JWT_TOKEN}`,
-//   },
-//   // body: JSON.stringify(),
-// })
-//   .then(res => res.json())
-//   .then(res => console.log(res));
+export const fetchRemoveBooks = id => dispatch => {
+  dispatch(booksRequest());
+  const config = {
+    url: `http://127.0.0.1:4000/books/${id}`,
+    method: 'delete',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `bearer ${localStorage.token}`,
+    },
+  };
+  axios(config)
+    .then(() => {
+      console.log(id);
+      dispatch(bookDelete(id));
+    })
+
+    .catch(error => {
+      const errorMsg = error.message;
+      dispatch(booksFailure(errorMsg));
+    });
+};

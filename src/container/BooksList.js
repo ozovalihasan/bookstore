@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from '../components/Book';
 // import { removeBook } from '../redux/index';
-import { removeBook, fetchAllBooks } from '../redux/index';
+import { fetchRemoveBooks, fetchAllBooks } from '../redux/index';
 
 function BooksList() {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ function BooksList() {
   if (books.initialized === false) dispatch(fetchAllBooks());
   const allBooks = books.books;
   const filter = useSelector(state => state.filter);
-  const handleRemoveBook = id => dispatch(removeBook(id));
+  const handleRemoveBook = id => dispatch(fetchRemoveBooks(id));
 
   const filterBooks = allBooks => (filter === 'All'
     ? allBooks
