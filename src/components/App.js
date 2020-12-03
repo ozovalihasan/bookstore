@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 import BooksList from '../container/BooksList';
 import BooksForm from '../container/BooksForm';
@@ -8,11 +8,11 @@ import BookStoreHeader from './BookStoreHeader';
 // import Login from './Login';
 
 function App() {
-  const user = useSelector(state => state.user);
+  // const user = useSelector(state => state.user);
 
   return (
     <div className="app main">
-      {user.user ? (
+      {localStorage.token ? (
         <>
           <BookStoreHeader />
           <BooksList />

@@ -11,7 +11,11 @@ function Navbar() {
         </li>
         |
         <li>
-          <Link to="/sign_up">Sign up</Link>
+          <Link to="/sign-up">Sign up</Link>
+        </li>
+        |
+        <li>
+          <Link to="/sign-out">Sign-out</Link>
         </li>
         |
         <li>

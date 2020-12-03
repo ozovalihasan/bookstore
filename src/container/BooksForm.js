@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/index';
+import { fetchBooksAdd } from '../redux/index';
 
 const CATEGORIES = [
   'Action',
@@ -11,24 +11,43 @@ const CATEGORIES = [
   'Learning',
   'Sci-Fi',
 ];
-function BooksForm() {
+const BooksForm = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('Action');
+  const [completePercentage, setCompletePercentage] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (title && category) {
-      dispatch(addBook(title, category));
-      setTitle('');
-      setCategory('Action');
+    if (title && author && category && completePercentage) {
+      dispatch(fetchBooksAdd(title, author, category, completePercentage));
+      // setTitle('');
+      // setAuthor('');
+      // setCategory('Action');
+      // setCompletePercentage(0);
       e.target.reset();
     }
   };
 
   const handleChange = e => {
-    if (e.target.name === 'title') setTitle(e.target.value);
-    if (e.target.name === 'category') setCategory(e.target.value);
+    switch (e.target.name) {
+      case 'title':
+        setTitle(e.target.value);
+        break;
+      case 'author':
+        setAuthor(e.target.value);
+        break;
+      case 'category':
+        setCategory(e.target.value);
+        break;
+      case 'completePercentage':
+        setCompletePercentage(e.target.value);
+        break;
+
+      default:
+        break;
+    }
   };
 
   return (
@@ -41,6 +60,13 @@ function BooksForm() {
           type="text"
           placeholder="Book title"
           className="books-form input "
+          required
+        />
+        <input
+          name="author"
+          onChange={handleChange}
+          type="text"
+          placeholder="Book author"
           required
         />
 
@@ -59,12 +85,20 @@ function BooksForm() {
             </option>
           ))}
         </select>
+
+        <input
+          name="completePercentage"
+          onChange={handleChange}
+          type="text"
+          placeholder="Book complete percentage"
+          required
+        />
         <button type="submit" className="books-form add-book ">
           ADD BOOK
         </button>
       </form>
     </div>
   );
-}
+};
 
 export default BooksForm;

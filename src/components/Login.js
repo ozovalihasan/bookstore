@@ -8,7 +8,7 @@ import { fetchUserLogin } from '../redux';
 const Login = () => {
   const user = useSelector(state => state.user);
 
-  return user.user ? (
+  return localStorage.token ? (
     <Redirect to={{ pathname: '/' }} />
   ) : (
     <UserForm fetchUser={fetchUserLogin} loading={user.loading} />
