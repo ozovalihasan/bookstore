@@ -10,26 +10,25 @@ const BooksList = () => {
   const { loading } = books;
   if (books.initialized === false) dispatch(fetchAllBooks());
   const allBooks = books.books;
-  const filter = useSelector(state => state.filter);
+
+  const bookFilter = useSelector(state => state.filter);
   const handleRemoveBook = id => dispatch(fetchRemoveBooks(id));
   if (allBooks === undefined) return <Redirect to={{ pathname: '/login' }} />;
-  const filterBooks = allBooks => (filter === 'All'
+  const filterBooks = allBooks => (bookFilter === 'All'
     ? allBooks
-    : allBooks.filter(book => book.category === filter));
+    : allBooks.filter(book => book.category === bookFilter));
 
   return (
-    <div>
-      <div>
-        {loading && <Loading /> }
-        {filterBooks(allBooks).map(book => (
-          <Book
-            key={book.id}
-            book={book}
-            handleRemoveBook={() => handleRemoveBook(book.id)}
-          />
-        ))}
-      </div>
-    </div>
+    <>
+      {loading && <Loading /> }
+      {filterBooks(allBooks).map(book => (
+        <Book
+          key={book.id}
+          book={book}
+          handleRemoveBook={() => handleRemoveBook(book.id)}
+        />
+      ))}
+    </>
   );
 };
 
