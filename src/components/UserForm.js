@@ -27,19 +27,11 @@ const UserForm = ({
 );
 
 UserForm.propTypes = {
-  handleChange: PropTypes.func,
-  handleSubmit: PropTypes.func,
-  loading: PropTypes.bool,
-  username: PropTypes.string,
-  password: PropTypes.string,
-};
-
-UserForm.defaultProps = {
-  handleChange: () => '',
-  handleSubmit: () => '',
-  loading: false,
-  username: '',
-  password: '',
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  username: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
 };
 
 export default UserForm;

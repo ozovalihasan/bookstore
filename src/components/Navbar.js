@@ -37,11 +37,7 @@ Navbar.propTypes = {
   handleClick: PropTypes.func.isRequired,
   user: PropTypes.shape({
     user: PropTypes.string.isRequired,
-  }),
-};
-
-Navbar.defaultProps = {
-  user: { user: '' },
+  }).isRequired,
 };
 
 export default Navbar;

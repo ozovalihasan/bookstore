@@ -54,13 +54,8 @@ Book.propTypes = {
     author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     complete_percentage: PropTypes.string.isRequired,
-  }),
+  }).isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
 };
 
-Book.defaultProps = {
-  book: {
-    id: 1, title: '', author: '', category: '', complete_percentage: '0',
-  },
-};
 export default Book;
