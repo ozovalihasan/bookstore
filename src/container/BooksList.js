@@ -1,11 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Book from '../components/Book';
+import Loading from '../components/Loading';
 import { fetchRemoveBooks, fetchAllBooks } from '../redux/index';
 
 const BooksList = () => {
   const dispatch = useDispatch();
   const books = useSelector(state => state.books);
+  const { loading } = books;
   if (books.initialized === false) dispatch(fetchAllBooks());
   const allBooks = books.books;
   const filter = useSelector(state => state.filter);
@@ -18,6 +20,7 @@ const BooksList = () => {
   return (
     <div>
       <div>
+        {loading && <Loading /> }
         {filterBooks(allBooks).map(book => (
           <Book
             key={book.id}
