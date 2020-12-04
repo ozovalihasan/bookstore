@@ -2,8 +2,8 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import UserForm from './UserForm';
 import { fetchUserSignUp } from '../redux';
+import UserFormContainer from '../container/UserFormContainer';
 
 const SignUp = () => {
   const user = useSelector(state => state.user);
@@ -11,7 +11,7 @@ const SignUp = () => {
   return localStorage.token ? (
     <Redirect to={{ pathname: '/' }} />
   ) : (
-    <UserForm fetchUser={fetchUserSignUp} loading={user.loading} />
+    <UserFormContainer fetchUser={fetchUserSignUp} loading={user.loading} />
   );
 };
 
