@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import BooksList from '../container/BooksList';
 import BooksForm from '../container/BooksForm';
 import BookStoreHeader from './BookStoreHeader';
+import { fetchUserAutoLogin } from '../redux';
+
 // import Login from './Login';
 
 function App() {
-  // const user = useSelector(state => state.user);
-
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (localStorage.token) dispatch(fetchUserAutoLogin());
+  }, []);
+  const user = useSelector(state => state.user);
   return (
     <div className="app main">
-      {localStorage.token ? (
+      {user.user || localStorage.token ? (
         <>
           <BookStoreHeader />
           <BooksList />

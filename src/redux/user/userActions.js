@@ -1,4 +1,5 @@
 import axios from 'axios';
+import serverUrl from '../serverUrl';
 import {
   FETCH_USER_REQUEST,
   FETCH_USER_SUCCESS,
@@ -27,7 +28,7 @@ export const userSignOut = () => ({
 export const fetchUserLogin = (username, password) => dispatch => {
   dispatch(fetchUserRequest());
   const config = {
-    url: 'http://127.0.0.1:4000/login',
+    url: `${serverUrl}/login`,
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
@@ -36,12 +37,28 @@ export const fetchUserLogin = (username, password) => dispatch => {
   };
   axios(config)
     .then(response => {
-      if (response.data.token) {
-        localStorage.token = response.data.token;
-        dispatch(fetchUserSuccess(response.data.user));
-      } else {
-        dispatch(fetchUserFailure(response.data.message));
-      }
+      localStorage.token = response.data.token;
+      dispatch(fetchUserSuccess(response.data.user));
+    })
+    .catch(error => {
+      const errorMsg = error.message;
+      dispatch(fetchUserFailure(errorMsg));
+    });
+};
+
+export const fetchUserAutoLogin = () => dispatch => {
+  dispatch(fetchUserRequest());
+  const config = {
+    url: `${serverUrl}/auto_login`,
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `bearer ${localStorage.token}`,
+    },
+  };
+  axios(config)
+    .then(response => {
+      dispatch(fetchUserSuccess(response.data));
     })
     .catch(error => {
       const errorMsg = error.message;
@@ -52,7 +69,7 @@ export const fetchUserLogin = (username, password) => dispatch => {
 export const fetchUserSignUp = (username, password) => dispatch => {
   dispatch(fetchUserRequest());
   const config = {
-    url: 'http://127.0.0.1:4000/users',
+    url: `${serverUrl}/users`,
     method: 'post',
     headers: {
       'Content-Type': 'application/json',

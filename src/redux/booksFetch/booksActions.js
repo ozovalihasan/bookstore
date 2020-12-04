@@ -1,10 +1,12 @@
 import axios from 'axios';
+import serverUrl from '../serverUrl';
 import {
   BOOKS_REQUEST,
   BOOKS_FAILURE,
   BOOK_CREATE,
   BOOKS_LIST,
   BOOK_DELETE,
+  BOOKS_RESET,
 } from './booksTypes';
 
 export const booksRequest = () => ({
@@ -31,10 +33,14 @@ export const booksFailure = error => ({
   payload: error,
 });
 
+export const booksReset = () => ({
+  type: BOOKS_RESET,
+});
+
 export const fetchBooksAdd = (title, author, category, compeletePercentage) => dispatch => {
   dispatch(booksRequest());
   const config = {
-    url: 'http://127.0.0.1:4000/books',
+    url: `${serverUrl}/books`,
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
@@ -46,7 +52,6 @@ export const fetchBooksAdd = (title, author, category, compeletePercentage) => d
   };
   axios(config)
     .then(response => {
-      console.log(response);
       dispatch(bookCreate(response.data));
     })
     .catch(error => {
@@ -58,7 +63,7 @@ export const fetchBooksAdd = (title, author, category, compeletePercentage) => d
 export const fetchAllBooks = () => dispatch => {
   dispatch(booksRequest());
   const config = {
-    url: 'http://127.0.0.1:4000/books',
+    url: `${serverUrl}/books`,
     method: 'get',
     headers: {
       'Content-Type': 'application/json',
@@ -67,7 +72,6 @@ export const fetchAllBooks = () => dispatch => {
   };
   axios(config)
     .then(response => {
-      console.log(response);
       dispatch(booksList(response.data));
     })
 
@@ -80,7 +84,7 @@ export const fetchAllBooks = () => dispatch => {
 export const fetchRemoveBooks = id => dispatch => {
   dispatch(booksRequest());
   const config = {
-    url: `http://127.0.0.1:4000/books/${id}`,
+    url: `${serverUrl}/books/${id}`,
     method: 'delete',
     headers: {
       'Content-Type': 'application/json',
@@ -89,7 +93,6 @@ export const fetchRemoveBooks = id => dispatch => {
   };
   axios(config)
     .then(() => {
-      console.log(id);
       dispatch(bookDelete(id));
     })
 

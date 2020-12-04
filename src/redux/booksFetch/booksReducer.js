@@ -4,6 +4,7 @@ import {
   BOOKS_FAILURE,
   BOOKS_LIST,
   BOOK_DELETE,
+  BOOKS_RESET,
 } from './booksTypes';
 
 const reducer = (state = {}, action) => {
@@ -33,18 +34,25 @@ const reducer = (state = {}, action) => {
 
     case BOOKS_LIST:
       return {
-        loading: false,
         ...state,
+        loading: false,
         books: action.payload,
         error: '',
       };
 
     case BOOK_DELETE:
-      console.log(action.payload);
+      return {
+        ...state,
+        loading: false,
+        books: state.books.filter(book => book.id !== action.payload.id),
+        error: '',
+      };
+
+    case BOOKS_RESET:
       return {
         loading: false,
-        ...state,
-        books: state.books.filter(book => book.id !== action.payload.id),
+        books: [],
+        initialized: false,
         error: '',
       };
 

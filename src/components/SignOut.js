@@ -1,7 +1,7 @@
 // import React from 'react';
 // import { Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { userSignOut } from '../redux';
+import { userSignOut, booksReset } from '../redux';
 
 const SignOut = () => {
   const dispatch = useDispatch();
