@@ -16,7 +16,7 @@ const BooksFormContainer = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('Action');
+  const [category, setCategory] = useState(categories[0]);
   const [completePercentage, setCompletePercentage] = useState('');
 
   const handleSubmit = e => {
