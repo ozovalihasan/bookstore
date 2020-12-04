@@ -7,7 +7,6 @@ import App from './components/App';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
-import SignOut from './components/SignOut';
 import store from './redux/store';
 
 import './stylesheet/index.scss';
@@ -21,7 +20,6 @@ ReactDOM.render(
           <Route exact path="/" component={App} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SignUp} />
-          <Route exact path="/sign-out" component={SignOut} />
         </Switch>
       </BrowserRouter>
     </Provider>
