@@ -1,12 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-function Navbar({ handleClick, user }) {
-  return (
-    <div className="navbar main">
-      <ul className="navbar container">
-        {
+const Navbar = ({ handleClick, user }) => (
+  <div className="navbar main">
+    <ul className="navbar container">
+      {
           (user.user) ? (
             <li>
               <button type="button" onClick={handleClick}>
@@ -31,10 +29,9 @@ function Navbar({ handleClick, user }) {
           )
         }
 
-      </ul>
-    </div>
-  );
-}
+    </ul>
+  </div>
+);
 
 Navbar.propTypes = {
   handleClick: PropTypes.func.isRequired,

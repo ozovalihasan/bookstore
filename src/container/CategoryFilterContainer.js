@@ -1,4 +1,5 @@
-import React from 'react';
+import { useDispatch } from 'react-redux';
+import { changeFilter } from '../redux/index';
 import CategoryFilter from '../components/CategoryFilter';
 
 const CATEGORIES = [
@@ -11,11 +12,15 @@ const CATEGORIES = [
   'Learning',
   'Sci-Fi',
 ];
+const CategoryFilterContainer = () => {
+  const dispatch = useDispatch();
+  const handleFilterChange = e => {
+    dispatch(changeFilter(e.target.value));
+  };
 
-function CategoryFilterContainer({ handleFilterChange }) {
   return (
     <CategoryFilter handleFilterChange={handleFilterChange} categories={CATEGORIES} />
   );
-}
+};
 
 export default CategoryFilterContainer;

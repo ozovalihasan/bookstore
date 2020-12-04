@@ -1,10 +1,9 @@
-import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Book from '../components/Book';
 import { fetchRemoveBooks, fetchAllBooks } from '../redux/index';
 
-function BooksList() {
+const BooksList = () => {
   const dispatch = useDispatch();
   const books = useSelector(state => state.books);
   if (books.initialized === false) dispatch(fetchAllBooks());
@@ -29,6 +28,6 @@ function BooksList() {
       </div>
     </div>
   );
-}
+};
 
 export default BooksList;

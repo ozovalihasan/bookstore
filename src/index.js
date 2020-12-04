@@ -5,8 +5,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import App from './components/App';
 import NavbarContainer from './container/NavbarContainer';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
+import Login from './container/Login';
+import SignUp from './container/SignUp';
 import store from './redux/store';
 
 import './stylesheet/index.scss';

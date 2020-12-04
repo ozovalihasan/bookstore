@@ -1,9 +1,8 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { userSignOut, booksReset } from '../redux';
 import Navbar from '../components/Navbar';
 
-function NavbarContainer() {
+const NavbarContainer = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.user);
 
@@ -14,6 +13,6 @@ function NavbarContainer() {
   };
 
   return <Navbar handleClick={handleClick} user={user} />;
-}
+};
 
 export default NavbarContainer;

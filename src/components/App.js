@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -7,7 +7,7 @@ import BooksForm from '../container/BooksForm';
 import { fetchUserAutoLogin } from '../redux';
 import BookStoreHeader from './BookStoreHeader';
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     if (localStorage.token) dispatch(fetchUserAutoLogin());
@@ -30,6 +30,6 @@ function App() {
     </div>
 
   );
-}
+};
 
 export default App;
