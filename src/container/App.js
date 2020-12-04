@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchUserAutoLogin } from '../redux';
-import BooksPage from './BooksPage';
+import BooksPage from '../components/BooksPage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -20,9 +20,7 @@ const App = () => {
   }
 
   return (
-    <Route>
-      <Redirect to={{ pathname: '/login' }} />
-    </Route>
+    <Redirect to={{ pathname: '/login' }} />
   );
 };
 

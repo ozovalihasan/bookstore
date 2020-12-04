@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import App from './components/App';
+import App from './container/App';
 import NavbarContainer from './container/NavbarContainer';
 import Login from './container/Login';
 import SignUp from './container/SignUp';
