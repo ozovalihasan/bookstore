@@ -1,18 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { userSignOut, booksReset } from '../redux';
+import PropTypes from 'prop-types';
 
-function Navbar() {
-  const dispatch = useDispatch();
-  const user = useSelector(state => state.user);
-
-  const handleClick = () => {
-    localStorage.removeItem('token');
-    dispatch(booksReset());
-    dispatch(userSignOut());
-  };
-
+function Navbar({ handleClick, user }) {
   return (
     <div className="navbar main">
       <ul className="navbar container">
@@ -45,5 +35,16 @@ function Navbar() {
     </div>
   );
 }
+
+Navbar.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+  user: PropTypes.shape({
+    user: PropTypes.string.isRequired,
+  }),
+};
+
+Navbar.defaultProps = {
+  user: { user: '' },
+};
 
 export default Navbar;

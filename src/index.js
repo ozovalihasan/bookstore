@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import App from './components/App';
-import Navbar from './components/Navbar';
+import NavbarContainer from './container/NavbarContainer';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import store from './redux/store';
@@ -15,7 +15,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <Navbar />
+        <NavbarContainer />
         <Switch>
           <Route exact path="/" component={App} />
           <Route exact path="/login" component={Login} />

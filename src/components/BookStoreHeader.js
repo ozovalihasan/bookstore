@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { changeFilter } from '../redux/index';
-import CategoryFilter from './CategoryFilter';
+import CategoryFilterContainer from '../container/CategoryFilterContainer';
 
 function BookStoreHeader() {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function BookStoreHeader() {
         <h1>BookStore CMS</h1>
         <h3>BOOKS</h3>
         <h3>CATEGORIES</h3>
-        <CategoryFilter handleFilterChange={handleFilterChange} />
+        <CategoryFilterContainer handleFilterChange={handleFilterChange} />
       </div>
     </div>
   );
