@@ -30,8 +30,8 @@ UserForm.propTypes = {
   handleChange: PropTypes.func,
   handleSubmit: PropTypes.func,
   loading: PropTypes.bool,
-  username: PropTypes.bool,
-  password: PropTypes.bool,
+  username: PropTypes.string,
+  password: PropTypes.string,
 };
 
 UserForm.defaultProps = {
