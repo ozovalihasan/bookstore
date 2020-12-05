@@ -39,7 +39,10 @@ const BooksFormContainer = () => {
         setCategory(e.target.value);
         break;
       case 'completePercentage':
-        setCompletePercentage(e.target.value);
+        if (e.target.value >= 0
+          && e.target.value <= 100
+          && e.target.value.length <= 4
+        ) { setCompletePercentage(e.target.value); }
         break;
 
       default:
@@ -48,7 +51,12 @@ const BooksFormContainer = () => {
   };
 
   return (
-    <BooksForm handleChange={handleChange} handleSubmit={handleSubmit} categories={categories} />
+    <BooksForm
+      handleChange={handleChange}
+      handleSubmit={handleSubmit}
+      categories={categories}
+      completePercentage={completePercentage}
+    />
   );
 };
 

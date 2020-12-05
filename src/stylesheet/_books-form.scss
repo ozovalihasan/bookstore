@@ -1,6 +1,7 @@
 .books-form {
   &.main {
-    margin: 0 100px 50px 100px;
+    width: auto;
+    padding: 0 100px 50px 100px;
   }
 
   &.add-text {
@@ -16,48 +17,46 @@
   }
 
   &.form-main {
+    width: 100%;
+
+  }
+
+  &.form-inputs{
     display: flex;
+    // align-items: stretch;
   }
 
   &.input {
-    width: 664px;
-    padding-left: 20px;
+    box-sizing:content-box; 
+    width: 100%;
+    height: 40px;
+    padding-left:   20px;
+    margin: 0 20px;
     border-radius: 4px;
-    border: solid 1px #e8e8e8;
-    background-color: #fff;
-    color: $pinkish-gray;
+    border: solid 1px $pinkish-gray;
+    color: $black-three;
+    background-color:#fff;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    // flex-shrink: 1;
   }
 
   &.select-category {
-    width: 285px;
-    margin: 0 0 0 20px;
-    padding-left: 15px;
-    border-radius: 4px;
-    border: solid 1px #e8e8e8;
-    background-color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.15px;
-    color: $pinkish-gray;
+    -moz-appearance: window;
+    -webkit-appearance: none;
   }
 
   &.add-book {
-    width: 184px;
-    height: 100%;
-    margin: 0 0 0 34px;
-    padding: 12.8px 19px 14.2px 22px;
+    width: 100%;
     border-radius: 3px;
+    margin: 20px 0px;
+    padding: 20px;
+    // height: 40px;
     background-color: $color-blue;
     color: #fff;
     font-weight: bold;
     letter-spacing: 0.5px;
-    font-size: 13px;
+    font-size: 16px;
     font-family: 'Roboto Slab', serif;
   }
 }
