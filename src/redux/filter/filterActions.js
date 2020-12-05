@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import { CHANGE_FILTER } from './filterTypes';
 
 export const changeFilter = category => ({
@@ -6,3 +7,5 @@ export const changeFilter = category => ({
     category,
   },
 });
+
+/* eslint-enable import/prefer-default-export */
