@@ -1,3 +1,3 @@
-const serverUrl = 'http://127.0.0.1:4000';
+const serverUrl = 'https://bookstore-cms-hasan.herokuapp.com';
 
 export default serverUrl;
