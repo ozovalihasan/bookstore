@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import PieChart from './PieChart';
 
 const Book = ({ book, handleRemoveBook }) => (
   <div className="book main">
@@ -26,15 +27,12 @@ const Book = ({ book, handleRemoveBook }) => (
       </div>
     </div>
     <div className="book percentage-container">
-      <div className="book percentage">
-        <div className="book oval"> </div>
-      </div>
+      <PieChart percentage={book.complete_percentage} />
       <div className="book percentage-subcontainer">
         <div className="book percentage-text">
           {book.complete_percentage}
           %
         </div>
-        <div className="book percentage-status">Completed</div>
       </div>
     </div>
     <div className="book progress">
