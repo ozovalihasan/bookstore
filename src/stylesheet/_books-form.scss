@@ -18,40 +18,36 @@
 
   &.form-main {
     width: 100%;
-
   }
 
-  &.form-inputs{
+  &.form-inputs {
     display: flex;
-    // align-items: stretch;
   }
 
   &.input {
-    box-sizing:content-box; 
+    box-sizing: content-box;
     width: 100%;
     height: 40px;
-    padding-left:   20px;
+    padding-left: 20px;
     margin: 0 20px;
     border-radius: 4px;
     border: solid 1px $pinkish-gray;
     color: $black-three;
-    background-color:#fff;
+    background-color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    // flex-shrink: 1;
   }
 
   &.select-category {
-    -moz-appearance: window;
+    -moz-appearance: none;
     -webkit-appearance: none;
   }
 
   &.add-book {
     width: 100%;
     border-radius: 3px;
-    margin: 20px 0px;
+    margin: 20px 0;
     padding: 20px;
-    // height: 40px;
     background-color: $color-blue;
     color: #fff;
     font-weight: bold;

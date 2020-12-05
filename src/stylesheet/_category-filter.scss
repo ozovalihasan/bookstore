@@ -1,15 +1,15 @@
 .category-filter {
-    &.main{
-        -moz-appearance: window;
-        -webkit-appearance: none;
-        box-sizing:content-box; 
-        height: 40px;
-        padding: 0  20px;
-        border-radius: 4px;
-        border: solid 1px $pinkish-gray;
-        color: $black-three;
-        background-color:#fff;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 16px;
-    }
+  &.main {
+    -moz-appearance: window;
+    -webkit-appearance: none;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 0  20px;
+    border-radius: 4px;
+    border: solid 1px $pinkish-gray;
+    color: $black-three;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+  }
 }

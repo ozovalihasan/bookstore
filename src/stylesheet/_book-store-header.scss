@@ -1,10 +1,9 @@
 .book-store-header {
-  &.main{
+  &.main {
     margin: 37px 100px 0;
-  height: 95px;
-  background-color: #fff;
+    height: 95px;
+    background-color: #fff;
   }
-  
 
   &.content {
     max-width: 1200px;
@@ -13,7 +12,6 @@
     justify-content: flex-start;
     align-items: center;
   }
-
 
   &.title {
     font-size: 30px;
