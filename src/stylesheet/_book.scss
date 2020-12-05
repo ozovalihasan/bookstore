@@ -20,10 +20,7 @@
     font-size: 22px;
     font-family: 'Roboto Slab', serif;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.2px;
+   
     color: $black-three;
   }
 
@@ -32,10 +29,6 @@
     opacity: 0.5;
     font-size: 14px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: $black-three;
   }
 
@@ -46,10 +39,6 @@
     font-family: 'Roboto Slab', serif;
     font-size: 14px;
     font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: #4386bf;
   }
 
@@ -60,10 +49,6 @@
     font-family: 'Roboto Slab', serif;
     font-size: 14px;
     font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: #4386bf;
     background: none;
   }
@@ -88,11 +73,7 @@
 
   &.percentage-text {
     font-size: 32px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
+ 
     color: $black-three;
   }
 
@@ -104,24 +85,15 @@
     opacity: 0.5;
     font-size: 13px;
     font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: $black-three;
   }
 
   &.current-chapter {
-    width: 75px;
     height: 21px;
     margin: 7px 109px 4px 59px;
     font-family: 'Roboto Slab', serif;
     font-size: 16px;
     font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.4px;
     color: $black-three;
   }
 

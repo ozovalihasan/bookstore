@@ -26,7 +26,6 @@
 
   &.sign {
     width: auto;
-    // box-sizing: content-box;
     display: flex;
     justify-content: flex-end;
     padding: 10px;
@@ -38,13 +37,10 @@
     width: 150px;
     text-align: center;
     text-decoration: none;
-    // display: block;
     padding: 20px;
     margin-left: 10px;
     border-radius: 5px;
     border: 1px $pinkish-gray solid;
     color: $black-three;
-    // background-color: red;
-    // height: 40px;
   }
 }
