@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import UserForm from '../components/UserForm';
 
-const UserFormContainer = ({ fetchUser, loading }) => {
+const UserFormContainer = ({ fetchUser, loading, buttonName }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -28,18 +28,15 @@ const UserFormContainer = ({ fetchUser, loading }) => {
       loading={loading}
       username={username}
       password={password}
+      buttonName={buttonName}
     />
   );
 };
 
 UserFormContainer.propTypes = {
-  fetchUser: PropTypes.func,
-  loading: PropTypes.bool,
-};
-
-UserFormContainer.defaultProps = {
-  fetchUser: () => '',
-  loading: false,
+  fetchUser: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  buttonName: PropTypes.string.isRequired,
 };
 
 export default UserFormContainer;

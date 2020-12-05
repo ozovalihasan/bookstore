@@ -5,8 +5,11 @@
 
 html,
 body {
-  box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+}
+* {
+  box-sizing: border-box;
+
 }
 
 body {
@@ -16,5 +19,8 @@ body {
 @import './book-store-header';
 @import './app';
 @import './book';
+@import './category-filter';
+@import './profile';
+@import './user-form';
 @import './books-form';
 @import './loading';

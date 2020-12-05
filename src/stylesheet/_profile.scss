@@ -1,0 +1,52 @@
+.profile{
+    &.main{
+        margin-left: auto;
+    }
+
+    &.container{
+
+    }
+
+    &.user-container {
+        display: flex;   
+    }
+    &.user {
+        border-radius: 5px;
+        padding: 20px;
+    }
+    &.logout-button{
+        padding: 20px;
+        border-radius: 5px;
+        border: 1px $pinkish-gray solid;
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+    }
+    &.sign {
+        width: auto;
+        // box-sizing: content-box;
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        margin: 10px;
+        padding-right: 100px;
+    }
+
+    &.sign-buttons{
+        width: 150px;
+        text-align: center;
+        text-decoration: none;
+        // display: block;
+        padding: 20px;
+        margin-left: 10px;
+        border-radius: 5px;
+        border: 1px $pinkish-gray solid;
+        color: $black-three;
+        // background-color: red;
+        // height: 40px;
+    }
+}

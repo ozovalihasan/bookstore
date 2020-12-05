@@ -10,7 +10,7 @@ const SignUp = () => {
   return localStorage.token ? (
     <Redirect to={{ pathname: '/' }} />
   ) : (
-    <UserFormContainer fetchUser={fetchUserSignUp} loading={user.loading} />
+    <UserFormContainer fetchUser={fetchUserSignUp} loading={user.loading} buttonName="Sign Up" />
   );
 };
 

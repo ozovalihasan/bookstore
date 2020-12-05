@@ -42,6 +42,7 @@ export const fetchBooksAdd = (title, author, category, compeletePercentage) => d
   const config = {
     url: `${serverUrl}/books`,
     method: 'post',
+    mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `bearer ${localStorage.token}`,
@@ -65,6 +66,7 @@ export const fetchAllBooks = () => dispatch => {
   const config = {
     url: `${serverUrl}/books`,
     method: 'get',
+    mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `bearer ${localStorage.token}`,
@@ -86,6 +88,7 @@ export const fetchRemoveBooks = id => dispatch => {
   const config = {
     url: `${serverUrl}/books/${id}`,
     method: 'delete',
+    mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `bearer ${localStorage.token}`,

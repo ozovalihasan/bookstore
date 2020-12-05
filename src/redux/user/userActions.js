@@ -30,6 +30,7 @@ export const fetchUserLogin = (username, password) => dispatch => {
   const config = {
     url: `${serverUrl}/login`,
     method: 'post',
+    mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -51,6 +52,7 @@ export const fetchUserAutoLogin = () => dispatch => {
   const config = {
     url: `${serverUrl}/auto_login`,
     method: 'get',
+    mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `bearer ${localStorage.token}`,
@@ -71,6 +73,7 @@ export const fetchUserSignUp = (username, password) => dispatch => {
   const config = {
     url: `${serverUrl}/users`,
     method: 'post',
+    mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
     },

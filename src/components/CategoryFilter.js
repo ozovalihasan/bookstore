@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const CategoryFilter = ({ handleFilterChange, categories }) => (
-  <select onChange={handleFilterChange} name="filter">
+  <select onChange={handleFilterChange} name="filter" className="category-filter main">
     {categories.map(category => (
       <option key={category} value={category}>
         {category}

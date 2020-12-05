@@ -13,7 +13,7 @@ const App = () => {
 
   const user = useSelector(state => state.user);
 
-  if (user.user || localStorage.token) {
+  if (user.user && localStorage.token) {
     return (
       <BooksPage />
     );

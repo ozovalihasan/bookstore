@@ -10,7 +10,7 @@ const Login = () => {
   return user.user ? (
     <Redirect to={{ pathname: '/' }} />
   ) : (
-    <UserFormContainer fetchUser={fetchUserLogin} loading={user.loading} />
+    <UserFormContainer fetchUser={fetchUserLogin} loading={user.loading} buttonName="Log In" />
   );
 };
 
