@@ -20,7 +20,6 @@
     font-size: 22px;
     font-family: 'Roboto Slab', serif;
     font-weight: bold;
-   
     color: $black-three;
   }
 
@@ -56,25 +55,6 @@
   &.button-remove,
   &.button-edit {
     border-left: 2px solid $pale-gray;
-  }
-
-  &.percentage-container {
-    display: flex;
-    position: relative;
-  }
-
-  &.percentage-subcontainer {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-
-  &.percentage-text {
-    font-size: 32px;
- 
-    color: $black-three;
   }
 
   &.current-text {

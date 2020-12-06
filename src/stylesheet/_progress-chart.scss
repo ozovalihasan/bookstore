@@ -1,0 +1,25 @@
+.progress-chart {
+  &.percentage-container {
+    display: flex;
+    position: relative;
+  }
+
+  &.percentage-subcontainer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  &.percentage-text {
+    font-size: 32px;
+    color: $black-three;
+    width: 55px;
+    border: none;
+    background-color: transparent;
+    // z-index: 0;
+    // background-color: red;
+    text-align: end;
+  }
+}

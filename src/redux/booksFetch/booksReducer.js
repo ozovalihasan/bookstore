@@ -3,6 +3,7 @@ import {
   BOOK_CREATE,
   BOOKS_FAILURE,
   BOOKS_LIST,
+  BOOK_UPDATE_PROGRESS,
   BOOK_DELETE,
   BOOKS_RESET,
 } from './booksTypes';
@@ -37,6 +38,19 @@ const reducer = (state = {}, action) => {
         ...state,
         loading: false,
         books: action.payload,
+        error: '',
+      };
+
+    case BOOK_UPDATE_PROGRESS:
+      return {
+        ...state,
+        loading: false,
+        books: state.books.map(book => {
+          if (book.id === action.payload.id) {
+            return action.payload;
+          }
+          return book;
+        }),
         error: '',
       };
 

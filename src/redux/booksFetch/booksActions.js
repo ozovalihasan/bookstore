@@ -5,6 +5,7 @@ import {
   BOOKS_FAILURE,
   BOOK_CREATE,
   BOOKS_LIST,
+  BOOK_UPDATE_PROGRESS,
   BOOK_DELETE,
   BOOKS_RESET,
 } from './booksTypes';
@@ -23,6 +24,11 @@ export const booksList = books => ({
   payload: books,
 });
 
+export const bookUpdateProgress = book => ({
+  type: BOOK_UPDATE_PROGRESS,
+  payload: book,
+});
+
 export const bookDelete = id => ({
   type: BOOK_DELETE,
   payload: { id },
@@ -37,7 +43,12 @@ export const booksReset = () => ({
   type: BOOKS_RESET,
 });
 
-export const fetchBooksAdd = (title, author, category, compeletePercentage) => dispatch => {
+export const fetchBooksAdd = (
+  title,
+  author,
+  category,
+  compeletePercentage,
+) => dispatch => {
   dispatch(booksRequest());
   const config = {
     url: `${serverUrl}/books`,
@@ -48,12 +59,41 @@ export const fetchBooksAdd = (title, author, category, compeletePercentage) => d
       Authorization: `bearer ${localStorage.token}`,
     },
     data: {
-      title, author, category, complete_percentage: compeletePercentage,
+      title,
+      author,
+      category,
+      complete_percentage: compeletePercentage,
     },
   };
   axios(config)
     .then(response => {
       dispatch(bookCreate(response.data));
+    })
+    .catch(error => {
+      const errorMsg = error.message;
+      dispatch(booksFailure(errorMsg));
+    });
+};
+
+export const fetchBooksUpdateProgress = (
+  bookId, compeletePercentage,
+) => dispatch => {
+  dispatch(booksRequest());
+  const config = {
+    url: `${serverUrl}/books/${bookId}`,
+    method: 'patch',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `bearer ${localStorage.token}`,
+    },
+    data: {
+      complete_percentage: compeletePercentage,
+    },
+  };
+  axios(config)
+    .then(response => {
+      dispatch(bookUpdateProgress(response.data));
     })
     .catch(error => {
       const errorMsg = error.message;
@@ -76,7 +116,6 @@ export const fetchAllBooks = () => dispatch => {
     .then(response => {
       dispatch(booksList(response.data));
     })
-
     .catch(error => {
       const errorMsg = error.message;
       dispatch(booksFailure(errorMsg));
