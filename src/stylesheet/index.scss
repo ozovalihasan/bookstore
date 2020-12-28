@@ -1,5 +1,5 @@
-@import './reset.css';
-@import './variable';
+@import 'reset.css';
+@import 'variable';
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
 
@@ -16,12 +16,12 @@ body {
   background-color: $white-gray;
 }
 
-@import './book-store-header';
-@import './app';
-@import './book';
-@import './category-filter';
-@import './progress-chart';
-@import './profile';
-@import './user-form';
-@import './books-form';
-@import './loading';
+@import 'book-store-header',
+  'books-page',
+  'book',
+  'category-filter',
+  'progress-chart',
+  'profile',
+  'user-form',
+  'books-form',
+  'loading';
