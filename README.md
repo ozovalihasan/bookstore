@@ -9,7 +9,7 @@ We developed a bookstore application for a fictional company using Redux and Rea
 ![screenshot](./bookstore.gif)
 
 ## Live Demo
-[Live Demo](https://bookstore-cms-ozan.herokuapp.com/)
+[Live Demo](https://bookstore.ozovalihasan.com/)
 
 ## Getting Started
 
