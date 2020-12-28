@@ -8,7 +8,12 @@ import {
   BOOKS_RESET,
 } from './booksTypes';
 
-const reducer = (state = {}, action) => {
+const reducer = (state = {
+  loading: false,
+  books: [],
+  initialized: false,
+  error: '',
+}, action) => {
   switch (action.type) {
     case BOOKS_REQUEST:
       return {

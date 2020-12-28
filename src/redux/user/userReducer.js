@@ -5,7 +5,11 @@ import {
   USER_SIGN_OUT,
 } from './userTypes';
 
-const reducer = (state = {}, action) => {
+const reducer = (state = {
+  loading: false,
+  user: '',
+  error: '',
+}, action) => {
   switch (action.type) {
     case FETCH_USER_REQUEST:
       return {
