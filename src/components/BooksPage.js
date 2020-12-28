@@ -3,10 +3,10 @@ import BooksFormContainer from '../container/BooksFormContainer';
 import BookStoreHeader from './BookStoreHeader';
 
 const BooksPage = () => (
-  <div className="app main">
+  <div className="books-page main">
     <BookStoreHeader />
     <BooksList />
-    <div className="app line"> </div>
+    <div className="books-page line"> </div>
     <BooksFormContainer />
 
   </div>
