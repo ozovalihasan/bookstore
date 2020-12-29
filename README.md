@@ -65,7 +65,7 @@ Fire up your app by running `heroku open` Yay!!! your app has been deployed succ
 
 👤 **Hasan Özovalı**
 
-- Website: [ozovalihasan.com](ozovalihasan.com)
+- Website: [ozovalihasan.com](https://www.ozovalihasan.com/)
 - LinkedIn: [Hasan Ozovali](https://www.linkedin.com/in/hasan-ozovali/)
 - Github: [@ozovalihasan](https://github.com/ozovalihasan)
 - Twitter: [@ozovalihasan](https://twitter.com/ozovalihasan)
