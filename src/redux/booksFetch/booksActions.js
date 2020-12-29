@@ -47,7 +47,7 @@ export const fetchBooksAdd = (
   title,
   author,
   category,
-  compeletePercentage,
+  completePercentage,
 ) => dispatch => {
   dispatch(booksRequest());
   const config = {
@@ -62,7 +62,7 @@ export const fetchBooksAdd = (
       title,
       author,
       category,
-      complete_percentage: compeletePercentage,
+      complete_percentage: completePercentage,
     },
   };
   axios(config)
@@ -76,7 +76,7 @@ export const fetchBooksAdd = (
 };
 
 export const fetchBooksUpdateProgress = (
-  bookId, compeletePercentage,
+  bookId, completePercentage,
 ) => dispatch => {
   dispatch(booksRequest());
   const config = {
@@ -88,7 +88,7 @@ export const fetchBooksUpdateProgress = (
       Authorization: `bearer ${localStorage.token}`,
     },
     data: {
-      complete_percentage: compeletePercentage,
+      complete_percentage: completePercentage,
     },
   };
   axios(config)
