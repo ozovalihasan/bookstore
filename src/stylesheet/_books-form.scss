@@ -1,11 +1,11 @@
 .books-form {
   &.main {
-    margin: 0 100px 50px 100px;
+    width: auto;
+    padding: 0 100px 50px 100px;
   }
 
   &.add-text {
-    height: 24px;
-    margin: 29px 524px 19px 0;
+    margin: 29px auto 19px 0;
     font-size: 20px;
     font-weight: bold;
     font-stretch: normal;
@@ -16,48 +16,66 @@
   }
 
   &.form-main {
-    display: flex;
+    width: 100%;
+  }
+
+  &.form-inputs {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px 0;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 1024px) {
+      display: flex;
+    }
   }
 
   &.input {
-    width: 664px;
-    padding-left: 20px;
+    box-sizing: content-box;
+    width: auto;
+    height: 40px;
     border-radius: 4px;
-    border: solid 1px #e8e8e8;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: solid 1px $pinkish-gray;
+    color: $black-three;
     background-color: #fff;
-    color: $pinkish-gray;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+
+    @media (min-width: 768px) {
+      width: auto;
+      margin: 10px 10px;
+      padding: 10px 20px;
+      padding-left: 20px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 0;
+      display: flex;
+      flex-grow: 1;
+    }
   }
 
   &.select-category {
-    width: 285px;
-    margin: 0 0 0 20px;
-    padding-left: 15px;
-    border-radius: 4px;
-    border: solid 1px #e8e8e8;
-    background-color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.15px;
-    color: $pinkish-gray;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    // width: 200px;
   }
 
   &.add-book {
-    width: 184px;
-    height: 100%;
-    margin: 0 0 0 34px;
-    padding: 12.8px 19px 14.2px 22px;
+    width: 100%;
     border-radius: 3px;
+    margin: 20px 0;
+    padding: 20px;
     background-color: $color-blue;
     color: #fff;
     font-weight: bold;
     letter-spacing: 0.5px;
-    font-size: 13px;
+    font-size: 16px;
     font-family: 'Roboto Slab', serif;
   }
 }

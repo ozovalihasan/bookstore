@@ -1,31 +1,35 @@
-import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import Book from '../components/Book';
-import { removeBook } from '../actions/index';
+import Loading from '../components/Loading';
+import { fetchRemoveBooks, fetchAllBooks } from '../redux/index';
 
-function BooksList() {
-  const allBooks = useSelector(state => state.book);
-  const filter = useSelector(state => state.filter);
+const BooksList = () => {
   const dispatch = useDispatch();
-  const handleRemoveBook = id => dispatch(removeBook(id));
+  const books = useSelector(state => state.books);
+  const { loading } = books;
+  if (books.initialized === false) dispatch(fetchAllBooks());
+  const allBooks = books.books;
 
-  const filterBooks = allBooks => (filter === 'All'
+  const bookFilter = useSelector(state => state.filter);
+  const handleRemoveBook = id => dispatch(fetchRemoveBooks(id));
+  if (allBooks === undefined) return <Redirect to={{ pathname: '/login' }} />;
+  const filterBooks = allBooks => (bookFilter === 'All'
     ? allBooks
-    : allBooks.filter(book => book.category === filter));
+    : allBooks.filter(book => book.category === bookFilter));
 
   return (
-    <div>
-      <div>
-        {filterBooks(allBooks).map(book => (
-          <Book
-            key={book.id}
-            book={book}
-            handleRemoveBook={() => handleRemoveBook(book.id)}
-          />
-        ))}
-      </div>
-    </div>
+    <>
+      {loading && <Loading /> }
+      {filterBooks(allBooks).map(book => (
+        <Book
+          key={book.id}
+          book={book}
+          handleRemoveBook={() => handleRemoveBook(book.id)}
+        />
+      ))}
+    </>
   );
-}
+};
 
 export default BooksList;

@@ -16,15 +16,12 @@
 
   &.title {
     height: 29px;
-    margin: 3px 323px 0 0;
+    margin: 3px auto 0 0;
     font-size: 22px;
     font-family: 'Roboto Slab', serif;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.2px;
     color: $black-three;
+    width: 100%;
   }
 
   &.category {
@@ -32,24 +29,14 @@
     opacity: 0.5;
     font-size: 14px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: $black-three;
   }
 
   &.writer {
-    width: 107px;
-    height: 19px;
     margin: 4px 0 0;
     font-family: 'Roboto Slab', serif;
     font-size: 14px;
     font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: #4386bf;
   }
 
@@ -60,10 +47,6 @@
     font-family: 'Roboto Slab', serif;
     font-size: 14px;
     font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: #4386bf;
     background: none;
   }
@@ -71,47 +54,6 @@
   &.button-remove,
   &.button-edit {
     border-left: 2px solid $pale-gray;
-  }
-
-  &.percentage-container {
-    display: flex;
-  }
-
-  &.percentage {
-    border-radius: 50%;
-    width: 90px;
-    height: 89.9px;
-    padding: 9.9px 10px 12px 12px;
-  }
-
-  &.oval {
-    width: 68px;
-    height: 68px;
-    border-style: solid;
-    border: none;
-    border-width: 5px;
-    border-radius: 50%;
-    border-image-slice: 1;
-    background:
-      radial-gradient(white 29px, transparent 29px),
-      conic-gradient($medium-blue 0%, $dodger-blue 70%, $pale-gray 70%);
-  }
-
-  &.percentage-subcontainer {
-    border-right: 2px solid $pale-gray;
-  }
-
-  &.percentage-text {
-    width: 68px;
-    height: 39px;
-    margin: 1px 92px 0 11px;
-    font-size: 32px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: $black-three;
   }
 
   &.current-text {
@@ -122,24 +64,15 @@
     opacity: 0.5;
     font-size: 13px;
     font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: $black-three;
   }
 
   &.current-chapter {
-    width: 75px;
     height: 21px;
     margin: 7px 109px 4px 59px;
     font-family: 'Roboto Slab', serif;
     font-size: 16px;
     font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.4px;
     color: $black-three;
   }
 

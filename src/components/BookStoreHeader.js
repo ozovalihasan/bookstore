@@ -1,23 +1,15 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { changeFilter } from '../actions/index';
-import CategoryFilter from './CategoryFilter';
+import CategoryFilterContainer from '../container/CategoryFilterContainer';
+import ProfileContainer from '../container/ProfileContainer';
 
-function BookStoreHeader() {
-  const dispatch = useDispatch();
-  const handleFilterChange = e => {
-    dispatch(changeFilter(e.target.value));
-  };
-  return (
-    <div className="bookHeader main">
-      <div className="bookHeader content">
-        <h1>BookStore CMS</h1>
-        <h3>BOOKS</h3>
-        <h3>CATEGORIES</h3>
-        <CategoryFilter handleFilterChange={handleFilterChange} />
-      </div>
+const BookStoreHeader = () => (
+  <div className="book-store-header main">
+    <div className="book-store-header content">
+      <h2 className="book-store-header title">BookStore CMS</h2>
+      <h3 className="book-store-header categories">CATEGORIES</h3>
+      <CategoryFilterContainer />
+      <ProfileContainer />
     </div>
-  );
-}
+  </div>
+);
 
 export default BookStoreHeader;

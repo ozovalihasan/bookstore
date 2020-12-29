@@ -1,0 +1,25 @@
+.loading {
+  &.main {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid $color-blue;
+    border-bottom: 16px solid $color-blue;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: translate(-50%, -50%) rotate(0deg); }
+    100% { -webkit-transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%)  rotate(360deg); }
+  }
+}

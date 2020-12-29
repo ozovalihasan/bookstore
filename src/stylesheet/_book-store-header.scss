@@ -1,8 +1,9 @@
-.bookHeader {
-  width: 100%;
-  height: 95px;
-  background-color: #fff;
-  margin: 0 auto;
+.book-store-header {
+  &.main {
+    margin: 37px 100px 0;
+    height: 95px;
+    background-color: #fff;
+  }
 
   &.content {
     max-width: 1200px;
@@ -10,26 +11,17 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin: 0 0 0 100px;
   }
 
-  h1,
-  h2,
-  h3 {
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    padding-right: 15px;
-  }
-
-  h1 {
+  &.title {
     font-size: 30px;
     font-weight: bold;
+    padding-right: 15px;
     color: $color-blue;
   }
 
-  h3 {
+  &.categories {
+    padding-right: 15px;
     font-size: 13px;
     font-stretch: normal;
     letter-spacing: 1.9px;
