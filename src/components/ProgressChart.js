@@ -45,6 +45,8 @@ const ProgressChart = ({ percent, onBlur, onChange }) => {
       <Doughnut
         data={data}
         options={options}
+        width="150"
+        height="150"
       />
     </div>
   );
