@@ -1,26 +1,28 @@
 import PropTypes from 'prop-types';
 
 const BooksForm = ({
-  handleChange, handleSubmit, categories, completePercentage,
+  handleChange, handleSubmit, categories, title, author, category, completePercentage,
 }) => (
   <div className="books-form main">
     <div className="books-form add-text ">ADD NEW BOOK</div>
     <form onSubmit={handleSubmit} className="books-form form-main ">
       <div className="books-form form-inputs">
         <input
+          className="books-form input "
           name="title"
           onChange={handleChange}
           type="text"
           placeholder="Book title"
-          className="books-form input "
+          value={title}
           required
         />
         <input
+          className="books-form input "
           name="author"
           onChange={handleChange}
           type="text"
           placeholder="Book author"
-          className="books-form input "
+          value={author}
           required
         />
 
@@ -28,6 +30,7 @@ const BooksForm = ({
           className="books-form input select-category "
           onChange={handleChange}
           name="category"
+          value={category}
           required
         >
           <option disabled value>
@@ -39,7 +42,6 @@ const BooksForm = ({
             </option>
           ))}
         </select>
-
         <input
           className="books-form input "
           name="completePercentage"
@@ -61,6 +63,9 @@ BooksForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   completePercentage: PropTypes.string.isRequired,
 };
 
