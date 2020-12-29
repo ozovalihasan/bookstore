@@ -5,8 +5,7 @@
   }
 
   &.add-text {
-    height: 24px;
-    margin: 29px 524px 19px 0;
+    margin: 29px auto 19px 0;
     font-size: 20px;
     font-weight: bold;
     font-stretch: normal;
@@ -21,26 +20,50 @@
   }
 
   &.form-inputs {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px 0;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 1024px) {
+      display: flex;
+    }
   }
 
   &.input {
     box-sizing: content-box;
-    width: 100%;
+    width: auto;
     height: 40px;
-    padding-left: 20px;
-    margin: 0 20px;
     border-radius: 4px;
+    margin: 10px 0;
+    padding: 10px 20px;
     border: solid 1px $pinkish-gray;
     color: $black-three;
     background-color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+
+    @media (min-width: 768px) {
+      width: auto;
+      margin: 10px 10px;
+      padding: 10px 20px;
+      padding-left: 20px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 0;
+      display: flex;
+      flex-grow: 1;
+    }
   }
 
   &.select-category {
     -moz-appearance: none;
     -webkit-appearance: none;
+    // width: 200px;
   }
 
   &.add-book {
@@ -54,5 +77,9 @@
     letter-spacing: 0.5px;
     font-size: 16px;
     font-family: 'Roboto Slab', serif;
+
+    @media (min-width: 768px){
+
+    }
   }
 }

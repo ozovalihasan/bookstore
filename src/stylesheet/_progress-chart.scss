@@ -2,6 +2,8 @@
   &.percentage-container {
     display: flex;
     position: relative;
+    width: auto;
+    height: auto;
   }
 
   &.percentage-subcontainer {

@@ -16,11 +16,12 @@
 
   &.title {
     height: 29px;
-    margin: 3px 323px 0 0;
+    margin: 3px auto 0 0;
     font-size: 22px;
     font-family: 'Roboto Slab', serif;
     font-weight: bold;
     color: $black-three;
+    width: 100%;
   }
 
   &.category {
