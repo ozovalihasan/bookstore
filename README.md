@@ -2,14 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 We developed a bookstore application for a fictional company using Redux and React where users can track their reading progress from the bookstore. The project includes the basic features of
-- Rendering the current books available in the bookstore
-- Updating the bookstore with recent books usign the Add book button
+
+- Signing in, signing up, and signing out
+- Listing all books of any user
+- Adding book to the bookstore
 - Removing books from the bookstore
+- Updating complete percentage of any book
 
 ![screenshot](./bookstore.gif)
 
 ## Live Demo
-[Live Demo](https://bookstore.ozovalihasan.com/)
+
+Please check [live demo.](https://bookstore.ozovalihasan.com/)
 
 ## Getting Started
 
@@ -17,7 +21,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Make sure Node.js is running on your local machine
+Make sure Node.js is running on your local machine.
 
 ### Setup
 
@@ -61,6 +65,7 @@ Fire up your app by running `heroku open` Yay!!! your app has been deployed succ
 
 👤 **Hasan Özovalı**
 
+- Wensite: [ozovalihasan.com](ozovalihasan.com)
 - LinkedIn: [Hasan Ozovali](https://www.linkedin.com/in/hasan-ozovali/)
 - Github: [@ozovalihasan](https://github.com/ozovalihasan)
 - Twitter: [@ozovalihasan](https://twitter.com/ozovalihasan)
