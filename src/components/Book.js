@@ -11,18 +11,12 @@ const Book = ({ book, handleRemoveBook }) => (
       </div>
 
       <div className="book buttons">
-        <button type="button" className="book action-buttons">
-          Comments
-        </button>
         <button
           className="book action-buttons button-remove"
           type="button"
           onClick={handleRemoveBook}
         >
           Remove
-        </button>
-        <button className="book action-buttons button-edit" type="button">
-          Edit
         </button>
       </div>
     </div>
